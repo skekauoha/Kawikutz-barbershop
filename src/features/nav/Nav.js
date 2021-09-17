@@ -1,16 +1,37 @@
 import React from 'react';
-import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
+import logo from '../nav/kawikutz-logo.png';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
 	return (
-		<div style={{ width: '100%' }}>
-			<Box display="flex" justifyContent="space-around" m={1} p={1}>
-				<Box p={1}>Our Story</Box>
-				<Box p={1}>Services</Box>
-				<Box p={1}>Portfolio</Box>
-				<Box p={1}>Appointment</Box>
-			</Box>
-		</div>
+		<Grid container>
+			<Grid item xs={2} alignItems="center">
+				<Link to="/">
+					<img src={logo} alt="Kawikutz" />
+				</Link>
+			</Grid>
+			<Grid item xs={2} alignItems="center" style={{ backgroundColor: 'red' }}>
+				<Link to="/story">
+					<p>Our Story</p>
+				</Link>
+			</Grid>
+			<Grid item xs={2} alignItems="center" style={{ backgroundColor: 'orange' }}>
+				<Link to="/services">
+					<p>Services</p>
+				</Link>
+			</Grid>
+			<Grid item xs={2} alignItems="center" style={{ backgroundColor: 'salmon' }}>
+				<Link to="/portfolio">
+					<p>Portfolio</p>
+				</Link>
+			</Grid>
+			<Grid item xs={2} alignItems="center" style={{ backgroundColor: 'pink' }}>
+				<Link to="/appointment">
+					<p>Appointment</p>
+				</Link>
+			</Grid>
+		</Grid>
 	);
 };
 
